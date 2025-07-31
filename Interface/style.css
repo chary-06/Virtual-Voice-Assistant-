@@ -1,0 +1,168 @@
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-color: #f8f9fa;
+            --dark-color: #202124;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f6f4f4;
+            color: var(--dark-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .subtitle {
+            color: #000000;
+            font-size: 1rem;
+        }
+        
+        .assistant-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .mic-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            border: none;
+            outline: none;
+        }
+        
+        .mic-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+        }
+        
+        .mic-button.active {
+            animation: pulse 1.5s infinite;
+            background: linear-gradient(135deg, var(--accent-color), #fbbc05);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(234, 67, 53, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(234, 67, 53, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(234, 67, 53, 0);
+            }
+        }
+        
+        .mic-icon {
+            color: white;
+            font-size: 40px;
+        }
+        
+        .response-box {
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            min-height: 200px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .response-text {
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+        
+        .status {
+            font-size: 0.9rem;
+            color: #5f6368;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .command-history {
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .command-history h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .history-list {
+            list-style-type: none;
+        }
+        
+        .history-item {
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 20px;
+            color: #5f6368;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .mic-button {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .mic-icon {
+                font-size: 30px;
+            }
+        }
